@@ -1,0 +1,22 @@
+<h1>Users Information</h1>
+<table>
+    <tr>
+        <th>username</th>
+        <th>E-mail</th>
+        <th>Gender</th>
+        <th>Hobbies</th>
+        <th>State</th>
+        <th>City</th>
+    </tr>
+
+    <%= @users.each do |user|%>
+        <tr>
+            <th><%= user.username %></th>
+            <th><%= user.email %></th>
+            <th><%= user.gender %></th>
+            <th><%= user.hobbies.join "," %></th>
+            <th><%= user.state %></th>
+            <th><%= user.city %></th>
+        </tr>
+    <% end %>
+</table>

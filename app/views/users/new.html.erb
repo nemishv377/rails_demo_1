@@ -1,0 +1,55 @@
+<div id='form_div'>
+
+<%= form_with model: @user do |form| %>
+    <table border='1px solid'>
+        <tr>
+            <th colspan=2>User Form </th>
+        </tr>
+        <tr>
+            <th> <%= form.label :username %> </th>
+            <th> <%= form.text_field :username %> </th>
+        </tr>
+        <tr>
+            <th> <%= form.label :email %> </th>
+            <th> <%= form.text_field :email %> </th>
+        </tr>
+        <tr>
+            <th> Gender </th>
+            <th> 
+                <%= form.radio_button :gender, "male" %> 
+                <%= form.label :gender_male, "Male" %>
+                <%= form.radio_button :gender, "female" %> 
+                <%= form.label :gender_female, "Female" %>
+                <%= form.radio_button :gender, "other" %> 
+                <%= form.label :gender_other,"Other" %>
+            </th>
+        </tr>
+        <tr>
+            <th> Hobby </th>
+            <th> 
+                <%= form.check_box :reading %> 
+                <%= form.label :reading, "Reading" %>
+                <%= form.check_box :travelling %> 
+                <%= form.label :travelling, "Travelling" %>
+                <%= form.check_box :photography %> 
+                <%= form.label :photography,"Photography" %>
+            </th>
+        </tr>
+         <tr>
+            <th> State </th>
+            <th> <%= form.select :state, @states%>
+        </tr>
+        
+         <tr>
+            <th> City </th>
+            <th> <%= form.select :city, @cities%>
+        </tr>
+        
+        <tr>
+            <td colspan=2> <%= form.submit %> </td>
+        </tr>
+        
+<% end %>
+
+</div>
+
