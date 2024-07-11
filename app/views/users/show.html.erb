@@ -4,3 +4,9 @@
 <h4><%= @user.hobbies.join(",\s ") %></h4>
 <h4><%= @user.state %></h4>
 <h4><%= @user.city %></h4>
+
+<%= link_to 'Edit' , edit_user_path(@user) %>
+<%= link_to "Destroy", user_path(@user), data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?"
+              } %></li>

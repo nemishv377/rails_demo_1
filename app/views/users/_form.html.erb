@@ -1,0 +1,53 @@
+<div id='form_div'>
+
+<%= form_with model: user do |form| %>
+    <table border='1px solid'>
+        <tr>
+            <th colspan=2>User Form </th>
+        </tr>
+        <tr>
+            <th> <%= form.label :username, class: 'form-label' %> </th>
+            <th> <%= form.text_field :username, class: 'form-select' %> </th>
+        </tr>
+        <tr>
+            <th> <%= form.label :email %> </th>
+            <th> <%= form.text_field :email %> </th>
+        </tr>
+        <tr>
+            <th> Gender </th>
+            <th> 
+                <%= form.radio_button :gender, "male" %> 
+                <%= form.label :gender_male, "Male" %>
+                <%= form.radio_button :gender, "female" %> 
+                <%= form.label :gender_female, "Female" %>
+                <%= form.radio_button :gender, "other" %> 
+                <%= form.label :gender_other,"Other" %>
+            </th>
+        </tr>
+        <tr>
+            <th> Hobby </th>
+            <th> 
+                <%= form.check_box :hobbies, { multiple: true }, "reading", nil %> Reading <br>
+                <%= form.check_box :hobbies, { multiple: true }, "travelling", nil %> Travelling <br>
+                <%= form.check_box :hobbies, { multiple: true }, "photography", nil %> Photography 
+ 
+            </th>
+        </tr>
+         <tr>
+            <th> State </th>
+            <th> <%= form.select :state, states, selected: user.state %> </th>
+            
+        </tr>
+        
+         <tr>
+            <th> City </th>
+            <th> <%= form.select :city, cities, selected: user.city %>
+        </tr>
+        
+        <tr>
+            <td colspan=2> <%= form.submit "Submit" %> </td>
+        </tr>
+        
+<% end %>
+
+</div>
